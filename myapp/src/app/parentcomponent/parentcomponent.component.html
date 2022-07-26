@@ -1,0 +1,37 @@
+<style>
+
+    table{
+        display: inline;
+        position: relative;
+        left: 150px;
+     }
+ </style>
+
+ <h2>Choose Course to View Participants</h2>
+ <div class="col">
+
+    
+    <table style="border: 1px solid black ;padding: 10px;" *ngFor="let event of event" >
+    <thead>
+        <tr>
+            <th class="col">
+                &nbsp;&nbsp;&nbsp;<input type="radio"
+                 (change)="onEventIdSelected(event)" name="eventid"
+                 [value]="event.eventcode"/>
+                 {{event.eventcode}}
+                 {{event.eventname}}
+            </th>
+        </tr>
+    </thead>
+    </table>
+</div>
+
+
+ 
+
+<div class="row">
+    <div class="col-xs-12">
+        <app-childcomponent [eventcode]="eventcode"></app-childcomponent>
+    </div>
+</div>
+

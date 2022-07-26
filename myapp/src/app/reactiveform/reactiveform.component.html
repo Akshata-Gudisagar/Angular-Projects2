@@ -1,0 +1,113 @@
+<form [formGroup]="eventForm" (ngSubmit)="onSubmit()" id="form">
+  <h5 class="title">Form Array Example</h5>
+  <div class="form-group">
+
+    <input type="text" id="name" name="name" pInputText class="p-inputtext" placeholder="First Name"
+      formControlName="name">
+  </div>
+  <div class="form-group">
+
+    <input type="text" id="name" name="name" pInputText class="p-inputtext" placeholder="Last Name"
+      formControlName="name">
+  </div>
+  <div class="form-group">
+    <input type="text" name="email" pInputText class="p-inputtext" placeholder="E-mail" formControlName="email">
+    <div
+      *ngIf="eventForm.controls['email'].hasError('required') && (eventForm.controls['email'].touched|| eventForm.controls['email'].dirty )"
+      class="alert alert-danger">
+      Enter the E-mail </div>
+      
+    <div
+      *ngIf="eventForm.controls['email'].hasError('pattern') && (eventForm.controls['email'].touched || eventForm.controls['email'].dirty)"
+      class="alert alert-danger">
+      Enter the valid E-mail
+    </div>
+    <div class="form-group">
+
+      <h1>Hobbies</h1>
+
+      <h2>Sports</h2>
+
+      <p-checkbox name="groupname" value="1"></p-checkbox>
+
+      <h2>Music</h2>
+
+      <p-checkbox name="groupname" value="2"></p-checkbox>
+
+      <h2>Movie</h2>
+
+      <p-checkbox name="groupname" value="3"></p-checkbox>
+
+    </div>
+  </div>
+
+
+
+  <div class="form-group">
+    <input type="password" name="Password" pInputText placeholder="Password" class="p-inputtext"
+      formControlName="password">
+    <div
+      *ngIf="eventForm.controls['password'].hasError('required') && (eventForm.controls['password'].touched || eventForm.controls['password'].dirty )"
+      class="alert alert-danger">
+      Enter the password
+    </div>
+
+    <span>
+      <mat-radio-button >Married&nbsp;&nbsp;&nbsp;</mat-radio-button>
+      <mat-radio-button >Unmarried&nbsp;&nbsp;&nbsp;</mat-radio-button>
+    </span>
+    <div
+      *ngIf="eventForm.controls['password'].hasError('pattern') && (eventForm.controls['password'].touched || eventForm.controls['password'].dirty)"
+      class="alert alert-danger">
+      Enter the minimum 10 and maximum 30 charcters
+    </div>
+  </div>
+
+
+  <div class="border  mx-md-n5">
+    <label for="" style="font-weight: bold;">Address:</label>
+    <div class="add">
+      <button type="button" (click)="addAddress()" class="p-button-success" pButton
+        style="border-radius: 50%;height: 45px;width: 50px;"><i class="fa-solid fa-plus"></i></button>
+    </div>
+    <div class="form-group">
+      <input type="text" name="email" pInputText class="p-inputtext" placeholder="address">
+    </div>
+    <div class="form-group">
+
+      <input type="text" name="email" pInputText class="p-inputtext" placeholder="pincode">
+    </div>
+  </div>
+
+
+
+
+  <div formArrayName="address">
+
+    <div *ngFor="let addres of address.controls; let i=index">
+      <div class="remove">
+        <button (click)="removeAddress(i)" pButton class="p-button-danger "
+          style="border-radius: 50%;height: 45px;width: 50px;"><i class="fa-solid fa-minus"></i></button>
+      </div>
+      <div [formGroupName]="i">
+
+        <div class="form-group">
+
+          <input type="text" pInputText class="p-inputtext" formControlName="address" placeholder="address">
+
+        </div>
+        <div class="form-group">
+          <input type="text" pInputText class="p-inputtext" formControlName="pincode" placeholder="pincode">
+        </div>
+      </div>
+    </div>
+  </div>
+  <div>
+  </div>
+
+
+  <div>
+    <button type="submit" pButton pRipple>Submit</button>
+  </div>
+
+</form>

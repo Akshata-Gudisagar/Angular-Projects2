@@ -1,0 +1,39 @@
+
+    
+
+
+<div class="col" >
+    <div class="col-sm-12 well">
+        <div class="topnavbar"></div>
+        <!-- <h2 id="header">Angular Routing</h2> -->
+        <ul> 
+            <li class="nav-item"><a routerLink="/angularrounting" class="list-group-item" routerLinkActive="active">Angular Routing</a></li>
+            <li class="nav-item"><a routerLink="/home" class="list-group-item" routerLinkActive="active">Home</a></li>
+            <li class="nav-item"><a routerLink="/aboutus" class="list-group-item" routerLinkActive="active">About Us</a></li>
+            <li><a routerLink="/privacypolicy" class="list-group-item" routerLinkActive="active">privacypolicy</a></li>
+            <li><a routerLink="/termsconditions" class="list-group-item" routerLinkActive="active">termsconditions</a></li>
+        </ul>
+    </div>
+</div>
+<div class="col">
+    <!-- <div class="topnavbar" -->
+    <div class="col-sm-3 well" style="height: 100%;">
+        <!-- <ul>
+            <li><a routerLink="/angularrounting" class="list-group-item" routerLinkActive="active">Angular Routing</a></li>
+            <li><a routerLink="/home" class="list-group-item" routerLinkActive="active">Home</a></li>
+            <li><a routerLink="/aboutus" class="list-group-item" routerLinkActive="active">About Us</a></li>
+            <li><a routerLink="/privacypolicy" class="list-group-item" routerLinkActive="active">privacypolicy</a></li>
+            <li><a routerLink="/termsconditions" class="list-group-item" routerLinkActive="active">termsconditions</a></li>
+        </ul> -->
+    </div>
+    <div class="col-sm-9 well" style="height: 100%;">
+        <div ng-view>
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+</div>
+
+
+
+
+

@@ -1,0 +1,23 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "productName": "Book",
+      "price": 50
+    },
+    {
+      "id": 2,
+      "productName": "Laptop",
+      "price": 60000
+    },
+    {
+      "id": 3,
+      "productName": "Mobile",
+      "price": 50000
+    }
+  ],
+  "comments": [],
+  "profile": {
+    "name": "typicode"
+  }
+}
